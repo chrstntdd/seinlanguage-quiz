@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./main.css">
-  <title>Document</title>
+  <title>Seinlanguage Quiz</title>
 </head>
+
 <body>
-  <h1>Hello, w0rld.</h1>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <header>
+    <h1>Do you know Seinlanguage?</h1>
+  </header>
+  <main>
+    <div class="quiz-card">
+      <button id='start-quiz'>Let's begin</button>
+      <section class='question js-question'>
+        <h3>(<span class='js-current-question-num'>1</span> / 5) What did Jerry accidentally call Michael Richard's character in the pilot episode?</h3>
+        <form>
+          <label class='answer' for="js-first-answer">
+            <input id='js-first-answer' type="radio" name="answerChoice" value="">
+            Kramer
+          </label>
+          <label class='answer' for="js-second-answer">
+            <input id='js-second-answer' type="radio" name="answerChoice" value="">
+            Keagan
+          </label>
+          <label class='answer' for="js-third-answer">
+            <input id='js-third-answer' type="radio" name="answerChoice" value="">
+            Kessler
+          </label>
+          <label class='answer' for="js-fourth-answer">
+            <input id='js-fourth-answer' type="radio" name="answerChoice" value="">
+            Ketchup
+          </label>
+          <button type="submit">Submit answer</button>
+        </form>
+      </section>
+      <div class='current-score'>
+        <p> <span class='js-num-correct'>1</span> correct, <span class='js-num-wrong'>0</span> incorrect</p>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
   <script src='./app.js'></script>
 </body>
+
 </html>
