@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://www.fontify.me/wf/f573e2d6f0a25d6c5a10aaaff3a457b1" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./main.css">
   <title>Seinlanguage Quiz</title>
@@ -16,36 +17,38 @@
   </header>
   <main>
     <div class="quiz-card">
-      <button id='start-quiz'>Let's begin</button>
+      <button class='' id='start-quiz'>Let's begin</button> <!--Button is hidden after quiz is initiated. Hide using 'hidden' class.-->
       <section class='question js-question'>
-        <h3>(<span class='js-current-question-num'>1</span> / 5) What did Jerry accidentally call Michael Richard's character in the pilot episode?</h3>
+        <h3 class='js-###'>(<span class='js-current-question-num'>1</span> / 5) What did Jerry accidentally call Michael Richard's character in the pilot episode?</h3>
         <form>
           <label class='answer' for="js-first-answer">
-            <input id='js-first-answer' type="radio" name="answerChoice" value="">
+            <input id='js-first-answer' type="radio" name="answerChoice" value="Kramer">
             Kramer
           </label>
           <label class='answer' for="js-second-answer">
-            <input id='js-second-answer' type="radio" name="answerChoice" value="">
+            <input id='js-second-answer' type="radio" name="answerChoice" value="Keagan">
             Keagan
           </label>
           <label class='answer' for="js-third-answer">
-            <input id='js-third-answer' type="radio" name="answerChoice" value="">
+            <input id='js-third-answer' type="radio" name="answerChoice" value="Kessler">
             Kessler
           </label>
           <label class='answer' for="js-fourth-answer">
-            <input id='js-fourth-answer' type="radio" name="answerChoice" value="">
+            <input id='js-fourth-answer' type="radio" name="answerChoice" value="Ketchup">
             Ketchup
           </label>
-          <button type="submit">Submit answer</button>
+          <button id='submit-answer' type="submit">Submit answer</button>
         </form>
       </section>
+      <div class="js-right-or-wrong"></div> <!--Display feedback to recieved answer-->
+      <div class="js-final-results"></div> <!--Display final results of the quiz to the user-->
       <div class='current-score'>
         <p> <span class='js-num-correct'>1</span> correct, <span class='js-num-wrong'>0</span> incorrect</p>
       </div>
+      <button class='' id='start-quiz-over'>Start over</button> <!--Button is hidden until all questions are answered. Hide using 'hidden' class.-->
     </div>
   </main>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src='./app.js'></script>
 </body>
 
