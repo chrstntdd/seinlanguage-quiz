@@ -19,28 +19,33 @@
     <div class="quiz-card">
       <button class='' id='start-quiz'>Let's begin</button> <!--Button is hidden after quiz is initiated. Hide using 'hidden' class.-->
       <section class='question'>
-        <h3 class='js-question-text'><span class='js-question-count'></span> What did Jerry accidentally call Michael Richard's character in the pilot episode?</h3>
+        <h3 class='js-question-text'><span class='js-question-count'>(1/5)</span> What did Jerry accidentally call Michael Richard's character in the pilot episode?</h3>
         <form>
           <label class='answer'>
-            <input type="radio" name="answerChoice" value="Kramer">
+            <input type="radio" name="answerChoice" value="Kramer" required>
             Kramer
           </label>
           <label class='answer'>
-            <input type="radio" name="answerChoice" value="Keagan">
+            <input type="radio" name="answerChoice" value="Keagan" required>
             Keagan
           </label>
           <label class='answer'>
-            <input type="radio" name="answerChoice" value="Kessler">
+            <input type="radio" name="answerChoice" value="Kessler" required>
             Kessler
           </label>
           <label class='answer'>
-            <input type="radio" name="answerChoice" value="Ketchup">
+            <input type="radio" name="answerChoice" value="Ketchup" required>
             Ketchup
           </label>
-          <button id='submit-answer' type="submit">Submit answer</button>
+          <button id='submit-answer' type="submit" data-popup-open="popup-feedback">Submit answer</button>
         </form>
       </section>
-      <div class="js-answer-feedback"></div> <!--Display feedback to las submitted answer-->
+      <div class="popup" data-popup="popup-feedback">
+          <div class="popup-inner">
+              <h2>RIGHT/WRONG</h2>
+              <a class="popup-close" data-popup-close="popup-feedback" href="#">x</a>
+          </div>
+      </div>
       <div class="js-final-results"></div> <!--Display final results of the quiz to the user once all questions are answered.-->
       <div class='js-current-score'></div> <!--Display current score as a fraction-->
       <button class='hidden' id='start-quiz-over'>Start over</button> <!--Button is hidden until all questions are answered. Hide using 'hidden' class.-->
