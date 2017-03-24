@@ -1,5 +1,5 @@
 $(function () {
-  //
+  handleAnswerFeedback();
 });
 
 var state = {
@@ -34,7 +34,7 @@ var state = {
       question: 'What is George\'s debit card code?',
       answers: ['JERRY',
                 'BOSCO',
-                'BONOS',
+                'BOBOS',
                 'COSMO'],
       correctAnswerIndex: 1
     }
@@ -101,12 +101,6 @@ function renderQuestionChoices(state, element) {
   element.html(questionChoices);
 }
 
-function renderAnswerFeedback(state, element) {
-  var feedbackHTML = state.prevAnswerCorrect ?
-    '<h4>That\'s right!</h4>' :
-    '<h4>Sorry, that\'s not right.</h4>';
-  element.html(feedbackHTML);
-}
 
 function renderFinalFeedback(state, element) {
   var feedbackHTML = state.score + ' out of ' + state.questions.length + ' questions right.';
@@ -124,7 +118,7 @@ function handleStartQuiz() {
 function handleAnswerSubmits() {
   /*
   When the submit answer button is pressed, check answer, update state score object, 
-  increment currentQuestionIndex, render feedback response.
+  increment currentQuestionIndex, render feedback response, load next question.
   */
 }
 
@@ -133,4 +127,19 @@ function handleEndQuiz() {
   Once the currentQuestion is equal to the length of questions array,
   run renderFinalFeedback, present start over button.
   */
+}
+
+function handleAnswerFeedback() {
+  //OPEN MODAL
+  $('[data-popup-open]').on('click', function (e) {
+    var targetPopupClass = $(this).attr('data-popup-open');
+    $('[data-popup="' + targetPopupClass + '"]').fadeIn(350);
+    e.preventDefault();
+  });
+  //CLOSE MODAL
+  $('[data-popup-close]').on('click', function (e) {
+    var targetPopupClass = $(this).attr('data-popup-close');
+    $('[data-popup="' + targetPopupClass + '"]').fadeOut(350);
+    e.preventDefault();
+  });
 }
