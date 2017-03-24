@@ -18,34 +18,32 @@
   <main>
     <div class="quiz-card">
       <button class='' id='start-quiz'>Let's begin</button> <!--Button is hidden after quiz is initiated. Hide using 'hidden' class.-->
-      <section class='question js-question'>
-        <h3 class='js-###'>(<span class='js-current-question-num'>1</span> / 5) What did Jerry accidentally call Michael Richard's character in the pilot episode?</h3>
+      <section class='question'>
+        <h3 class='js-question-text'><span class='js-question-count'></span> What did Jerry accidentally call Michael Richard's character in the pilot episode?</h3>
         <form>
-          <label class='answer' for="js-first-answer">
-            <input id='js-first-answer' type="radio" name="answerChoice" value="Kramer">
+          <label class='answer'>
+            <input type="radio" name="answerChoice" value="Kramer">
             Kramer
           </label>
-          <label class='answer' for="js-second-answer">
-            <input id='js-second-answer' type="radio" name="answerChoice" value="Keagan">
+          <label class='answer'>
+            <input type="radio" name="answerChoice" value="Keagan">
             Keagan
           </label>
-          <label class='answer' for="js-third-answer">
-            <input id='js-third-answer' type="radio" name="answerChoice" value="Kessler">
+          <label class='answer'>
+            <input type="radio" name="answerChoice" value="Kessler">
             Kessler
           </label>
-          <label class='answer' for="js-fourth-answer">
-            <input id='js-fourth-answer' type="radio" name="answerChoice" value="Ketchup">
+          <label class='answer'>
+            <input type="radio" name="answerChoice" value="Ketchup">
             Ketchup
           </label>
           <button id='submit-answer' type="submit">Submit answer</button>
         </form>
       </section>
-      <div class="js-right-or-wrong"></div> <!--Display feedback to recieved answer-->
-      <div class="js-final-results"></div> <!--Display final results of the quiz to the user-->
-      <div class='current-score'>
-        <p> <span class='js-num-correct'>1</span> correct, <span class='js-num-wrong'>0</span> incorrect</p>
-      </div>
-      <button class='' id='start-quiz-over'>Start over</button> <!--Button is hidden until all questions are answered. Hide using 'hidden' class.-->
+      <div class="js-answer-feedback"></div> <!--Display feedback to las submitted answer-->
+      <div class="js-final-results"></div> <!--Display final results of the quiz to the user once all questions are answered.-->
+      <div class='js-current-score'></div> <!--Display current score as a fraction-->
+      <button class='hidden' id='start-quiz-over'>Start over</button> <!--Button is hidden until all questions are answered. Hide using 'hidden' class.-->
     </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
