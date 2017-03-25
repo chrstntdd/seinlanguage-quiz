@@ -18,24 +18,24 @@
   <main>
     <div class="quiz-card">
       <button class='' id='start-quiz'>Let's begin</button> <!--Button is hidden after quiz is initiated. Hide using 'hidden' class.-->
-      <section class='question'>
-        <h3 class='js-question-text'><span class='js-question-count'>(1/5)</span> What did Jerry accidentally call Michael Richard's character in the pilot episode?</h3>
-        <form>
+      <section id='my-quiz' class='question hidden'>
+        <h3 class='js-question-text'>></h3>
+        <form id='question-form'>
           <label class='answer'>
             <input type="radio" name="answerChoice" value="Kramer" required>
-            Kramer
+            <span></span>
           </label>
           <label class='answer'>
             <input type="radio" name="answerChoice" value="Keagan" required>
-            Keagan
+            <span></span>
           </label>
           <label class='answer'>
             <input type="radio" name="answerChoice" value="Kessler" required>
-            Kessler
+            <span></span>
           </label>
           <label class='answer'>
             <input type="radio" name="answerChoice" value="Ketchup" required>
-            Ketchup
+            <span></span>
           </label>
           <button id='submit-answer' type="submit" data-popup-open="popup-feedback">Submit answer</button>
         </form>
@@ -43,7 +43,7 @@
       <div class="popup" data-popup="popup-feedback">
           <div class="popup-inner">
               <h2>RIGHT/WRONG</h2>
-              <a class="popup-close" data-popup-close="popup-feedback" href="#">x</a>
+              <a id='close-feedback-modal'class="popup-close" data-popup-close="popup-feedback" href="#">X</a>
           </div>
       </div>
       <div class="js-final-results"></div> <!--Display final results of the quiz to the user once all questions are answered.-->
