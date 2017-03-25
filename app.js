@@ -9,7 +9,10 @@ var state = {
   questions: [
     {
       question: 'What did Jerry accidentally call Michael Richard\'s character in the pilot episode?',
-      answers: ['Kramer', 'Keagan', 'Kessler', 'Ketchup'],
+      answers: ['Kramer',
+                'Keagan',
+                'Kessler',
+                'Ketchup'],
       correctAnswer: 'Kessler'
     },
     {
@@ -62,7 +65,7 @@ function resetQuiz() {
   state.currentQuestionIndex = 0;
 }
 
-function renderQuestionCard(){
+function renderQuestionCard() {
   var currentQuestionObj = state.questions[state.currentQuestionIndex];
   renderQuestionPrompt();
   renderQuestionChoices(currentQuestionObj.answers);
@@ -70,59 +73,55 @@ function renderQuestionCard(){
 
 function renderQuestionPrompt() {
   var progressHTML = '<span>(' + (state.currentQuestionIndex + 1) + '/' + state.questions.length + ')</span>'
-  var questionText =  state.questions[state.currentQuestionIndex].question;
+  var questionText = state.questions[state.currentQuestionIndex].question;
   $('.js-question-text').html(progressHTML + questionText);
 }
 
-function renderQuestionChoices(answers){ //array
-  $('#question-form label').each(function(index, label){
+function renderQuestionChoices(answers) { //array
+  $('#question-form label').each(function (index, label) {
     $(this).find('input').attr('value', answers[index]);
     $(this).find('span').text(answers[index]);
   });
 }
 
-function renderFinalResults(){
+function renderFinalResults() {
   $('#my-quiz').addClass('hidden');
   $('#start-quiz-over').removeClass('hidden');
   var element = $('.js-final-results');
-  element.html('<h2>'+'You got ' + state.correctCount + ' out of ' + state.questions.length + ' right!'+'</h2>');
+  element.html('<h2>' + 'You got ' + state.correctCount + ' out of ' + state.questions.length + ' right!' + '</h2>');
   handleQuizRestart();
 }
 
-function checkAnswer(userChoice){
+function checkAnswer(userChoice) {
   var correctChoice = state.questions[state.currentQuestionIndex].correctAnswer;
-  if(userChoice == correctChoice){
+  if (userChoice == correctChoice) {
     state.correctCount++;
     renderQuestionFeedback(true);
   } else {
     renderQuestionFeedback(false);
   }
   state.currentQuestionIndex++;
-  if(state.currentQuestionIndex == state.questions.length){
+  if (state.currentQuestionIndex == state.questions.length) {
     renderFinalResults()
   } else {
     renderQuestionCard();
   }
 }
 
-function renderQuestionFeedback (boolean) {
+function renderQuestionFeedback(boolean) {
   var feedback = $('.popup-inner h2');
   boolean ? feedback.text('RIGHT') : feedback.text('WRONG')
 }
 
-//DOM MANIPULATION (RENDERS)
-
-function beginQuiz(){
-  $('#start-quiz').click(function(e){
+function beginQuiz() {
+  $('#start-quiz').click(function (e) {
     $('#my-quiz').removeClass('hidden');
     $('#start-quiz').addClass('hidden');
   });
 }
 
-//EVENT HANDLERS
-
-function handleQuizRestart(){
-  $('#start-quiz-over').on('click',function(e){
+function handleQuizRestart() {
+  $('#start-quiz-over').on('click', function (e) {
     $('#my-quiz').removeClass('hidden');
     $('#start-quiz-over').addClass('hidden');
     $('.js-final-results').text('');
@@ -132,7 +131,7 @@ function handleQuizRestart(){
 }
 
 function handleAnswerSubmits() {
-  $('#submit-answer').click(function(e){
+  $('#submit-answer').click(function (e) {
     e.preventDefault();
     var userChoice = $('input[name="answerChoice"]:checked').val();
     checkAnswer(userChoice);
