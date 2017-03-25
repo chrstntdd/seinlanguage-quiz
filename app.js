@@ -49,7 +49,7 @@ var state = {
 };
 
 
-function resetQuiz(state) {
+function resetQuiz() {
   state.correctCount = 0
   state.currentQuestionIndex = 0;
 }
@@ -77,7 +77,8 @@ function renderFinalResults(){
   $('#my-quiz').addClass('hidden');
   $('#start-quiz-over').removeClass('hidden');
   var element = $('.js-final-results');
-  element.text('TEST');
+  element.text('You got ' + state.correctCount + ' out of ' + state.questions.length + ' right!');
+  handleQuizRestart();
 }
 
 function checkAnswer(userChoice){
@@ -89,7 +90,7 @@ function checkAnswer(userChoice){
     renderQuestionFeedback(false);
   }
   state.currentQuestionIndex++;
-  if((state.currentQuestionIndex) == state.questions.length){
+  if(state.currentQuestionIndex == state.questions.length){
     renderFinalResults()
   } else {
     renderQuestionCard();
@@ -112,6 +113,16 @@ function beginQuiz(){
 
 //EVENT HANDLERS
 
+function handleQuizRestart(){
+  $('#start-quiz-over').on('click',function(e){
+    $('#my-quiz').removeClass('hidden');
+    $('#start-quiz-over').addClass('hidden');
+    $('.js-final-results').text('');
+    resetQuiz();
+    renderQuestionCard();
+  });
+}
+
 function handleAnswerSubmits() {
   $('#submit-answer').click(function(e){
     e.preventDefault();
@@ -125,13 +136,13 @@ function handleAnswerFeedback() {
   //OPEN MODAL
   $('#submit-answer').on('click', function (e) {
     var targetPopupClass = $(this).attr('data-popup-open');
-    $('[data-popup="' + targetPopupClass + '"]').fadeIn(350);
+    $('[data-popup="' + targetPopupClass + '"]').fadeIn(50);
     e.preventDefault();
   });
   //CLOSE MODAL
   $('#close-feedback-modal').on('click', function (e) {
     var targetPopupClass = $(this).attr('data-popup-close');
-    $('[data-popup="' + targetPopupClass + '"]').fadeOut(350);
+    $('[data-popup="' + targetPopupClass + '"]').fadeOut(50);
     e.preventDefault();
   });
 }
