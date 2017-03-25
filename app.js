@@ -40,6 +40,14 @@ var state = {
                 'BOBOS',
                 'COSMO'],
       correctAnswer: 'BOSCO'
+    },
+    {
+      question: 'What is the name of the raincoat Mr. Seinfeld invented?',
+      answers: ['The empire',
+                'The executive',
+                'The prestige',
+                'The trench'],
+      correctAnswer: 'The executive'
     }
   ],
   currentQuestionIndex: 0,
@@ -77,7 +85,7 @@ function renderFinalResults(){
   $('#my-quiz').addClass('hidden');
   $('#start-quiz-over').removeClass('hidden');
   var element = $('.js-final-results');
-  element.text('You got ' + state.correctCount + ' out of ' + state.questions.length + ' right!');
+  element.html('<h2>'+'You got ' + state.correctCount + ' out of ' + state.questions.length + ' right!'+'</h2>');
   handleQuizRestart();
 }
 
