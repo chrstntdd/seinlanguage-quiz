@@ -25,8 +25,8 @@ var state = {
       answers: ['Tyler\'s Chicken', 
                 'Kentucky Fried Cicken',
                 'Brendan\'s Southern Style Poultry',
-                'Popeye\'s'],
-      correctAnswer: 'Tyler\'s Chicken'
+                'Kenny Rogers Roasters'],
+      correctAnswer: 'Kenny Rogers Roasters'
     },
     {
       question: 'Why did George give up his Gore-Tex jacket to the liqor store clerk?',
@@ -55,7 +55,6 @@ var state = {
   ],
   currentQuestionIndex: 0,
   correctCount: 0,
-  prevAnswerCorrect: false
 
 };
 

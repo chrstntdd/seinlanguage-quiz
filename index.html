@@ -17,7 +17,9 @@
   </header>
   <main>
     <div class="quiz-card">
-      <button class='' id='start-quiz'>Let's begin</button> <!--Button is hidden after quiz is initiated. Hide using 'hidden' class.-->
+      <div class='txt-center'>
+        <button class='' id='start-quiz'>Let's begin</button> <!--Button is hidden after quiz is initiated. Hide using 'hidden' class.-->
+      </div>
       <section id='my-quiz' class='question hidden'>
         <h3 class='js-question-text'>></h3>
         <form id='question-form'>
@@ -46,8 +48,10 @@
               <a id='close-feedback-modal'class="popup-close" data-popup-close="popup-feedback" href="#">X</a>
           </div>
       </div>
-      <div class="js-final-results"></div> <!--Display final results of the quiz to the user once all questions are answered.-->
-      <button class='hidden' id='start-quiz-over'>Start over</button> <!--Button is hidden until all questions are answered. Hide using 'hidden' class.-->
+      <div class="js-final-results txt-center"></div> <!--Display final results of the quiz to the user once all questions are answered.-->
+      <div class="txt-center">
+        <button class='hidden' id='start-quiz-over'>Start over</button> <!--Button is hidden until all questions are answered. Hide using 'hidden' class.-->
+      </div>
     </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

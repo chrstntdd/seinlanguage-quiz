@@ -53,7 +53,11 @@ button {
 
 #start-quiz {
   background-color: green;
-  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+.txt-center{
+  text-align: center;
 }
 
 #start-quiz-over {
@@ -111,4 +115,14 @@ button {
     text-align:center;
     line-height:100%;
     color:#fff;
+}
+
+/*MOBILE STYLES*/
+@media only screen and (max-width: 640px) {
+  .quiz-card {
+    width: 100%;
+  }
+  h1{
+    margin-top: 20px;
+  }
 }
