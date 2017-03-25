@@ -1,7 +1,7 @@
 $(function () {
+  beginQuiz();
   handleAnswerFeedback();
   handleAnswerSubmits();
-  beginQuiz();
   renderQuestionCard();
 });
 
@@ -48,8 +48,6 @@ var state = {
 
 };
 
-//MANAGE STATE
-
 
 function resetQuiz(state) {
   state.correctCount = 0
@@ -75,21 +73,32 @@ function renderQuestionChoices(answers){ //array
   });
 }
 
+function renderFinalResults(){
+  $('#my-quiz').addClass('hidden');
+  $('#start-quiz-over').removeClass('hidden');
+  var element = $('.js-final-results');
+  element.text('TEST');
+}
+
 function checkAnswer(userChoice){
   var correctChoice = state.questions[state.currentQuestionIndex].correctAnswer;
-  if(userChoice === correctChoice){
+  if(userChoice == correctChoice){
     state.correctCount++;
     renderQuestionFeedback(true);
   } else {
     renderQuestionFeedback(false);
   }
   state.currentQuestionIndex++;
-  console.log(state.correctCount, state.currentQuestionIndex)
+  if((state.currentQuestionIndex) == state.questions.length){
+    renderFinalResults()
+  } else {
+    renderQuestionCard();
+  }
 }
 
 function renderQuestionFeedback (boolean) {
-  boolean ? $('.popup-inner h2').text('RIGHT') : $('.popup-inner h2').text('WRONG')
-  
+  var feedback = $('.popup-inner h2');
+  boolean ? feedback.text('RIGHT') : feedback.text('WRONG')
 }
 
 //DOM MANIPULATION (RENDERS)

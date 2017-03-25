@@ -48,18 +48,16 @@ button {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 #start-quiz {
   background-color: green;
-  display: block;
   margin: 0 auto 0 auto;
 }
 
 #start-quiz-over {
   background-color: orangered;
-  display: block;
   margin: 0 auto 0 auto;
 
 }
