@@ -78,10 +78,18 @@ function renderQuestionChoices(answers){ //array
 function checkAnswer(userChoice){
   var correctChoice = state.questions[state.currentQuestionIndex].correctAnswer;
   if(userChoice === correctChoice){
-    alert('RIGHT');
+    state.correctCount++;
+    renderQuestionFeedback(true);
   } else {
-    alert('wrong');
+    renderQuestionFeedback(false);
   }
+  state.currentQuestionIndex++;
+  console.log(state.correctCount, state.currentQuestionIndex)
+}
+
+function renderQuestionFeedback (boolean) {
+  boolean ? $('.popup-inner h2').text('RIGHT') : $('.popup-inner h2').text('WRONG')
+  
 }
 
 //DOM MANIPULATION (RENDERS)
