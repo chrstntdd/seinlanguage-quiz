@@ -79,6 +79,7 @@ function renderQuestionPrompt() {
 function renderQuestionChoices(answers) { //array
   $('#question-form label').each(function (index, label) {
     $(this).find('input').attr('value', answers[index]);
+    $(this).find('input').prop('checked', false); //render choices without previous selection.
     $(this).find('span').text(answers[index]);
   });
 }
