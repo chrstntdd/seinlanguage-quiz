@@ -40,7 +40,7 @@ var state = {
       question: 'What is George\'s debit card code?',
       answers: ['JERRY',
                 'BOSCO',
-                'BOBOS',
+                'PIZZA',
                 'COSMO'],
       correctAnswer: 'BOSCO'
     },
@@ -51,6 +51,38 @@ var state = {
                 'The prestige',
                 'The trench'],
       correctAnswer: 'The executive'
+    },
+    {
+      question: 'What man makes Elaine lose \'The Contest\'?',
+      answers: ['JFK Junior',
+                'Richard Gere',
+                'David Schwimmer',
+                'Jerry'],
+      correctAnswer: 'JFK Junior'
+    },
+    {
+      question: 'What kind of triangle does Kramer decide to name his future daughter?',
+      answers: ['Scalene',
+                'Isosceles',
+                'Right',
+                'Equilateral'],
+      correctAnswer: 'Isosceles'
+    },
+    {
+      question: 'What is the name of Jerry\'s favorite shirt?',
+      answers: ['Blue boy',
+                'Pearly white',
+                'Hot tamale',
+                'Golden boy'],
+      correctAnswer: 'Golden boy'
+    },
+    {
+      question: 'In which city is Seinfeld set in?',
+      answers: ['San Fransico',
+                'New York City',
+                'Washington DC',
+                'Dallas'],
+    correctAnswer: 'New York City'
     }
   ],
   currentQuestionIndex: 0,
