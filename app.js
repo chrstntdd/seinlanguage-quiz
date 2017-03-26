@@ -143,13 +143,13 @@ function handleAnswerFeedback() {
   //OPEN MODAL
   $('#submit-answer').on('click', function (e) {
     var targetPopupClass = $(this).attr('data-popup-open');
-    $('[data-popup="' + targetPopupClass + '"]').fadeIn(50);
+    $('[data-popup="' + targetPopupClass + '"]').fadeIn(250);
     e.preventDefault();
   });
   //CLOSE MODAL
   $('#close-feedback-modal').on('click', function (e) {
     var targetPopupClass = $(this).attr('data-popup-close');
-    $('[data-popup="' + targetPopupClass + '"]').fadeOut(50);
+    $('[data-popup="' + targetPopupClass + '"]').fadeOut(250);
     e.preventDefault();
   });
 }
