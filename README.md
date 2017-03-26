@@ -1,3 +1,3 @@
 # seinlanguage-quiz
 
-Simple seinfeld quiz app built using vanilla web technologies.
+Simple seinfeld quiz app built using jquery.
