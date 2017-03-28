@@ -129,10 +129,13 @@ function checkAnswer(userChoice) {
   if (userChoice == correctChoice) {
     state.correctCount++;
     renderQuestionFeedback(true);
+    state.currentQuestionIndex++;
+  } else if(userChoice == undefined){
+    renderQuestionFeedback('unanswered');
   } else {
     renderQuestionFeedback(false);
+    state.currentQuestionIndex++;
   }
-  state.currentQuestionIndex++;
   if (state.currentQuestionIndex == state.questions.length) {
     renderFinalResults()
   } else {
@@ -142,7 +145,13 @@ function checkAnswer(userChoice) {
 
 function renderQuestionFeedback(boolean) {
   var feedback = $('.popup-inner h2');
-  boolean ? feedback.text('RIGHT') : feedback.text('WRONG')
+  if (boolean == true){
+    feedback.text('Correct!');
+  } else if (boolean == false){
+    feedback.text('Sorry, that wasn\'t correct.');
+  } else if (boolean == 'unanswered'){
+    feedback.text('Please choose an answer.');
+  }
 }
 
 function beginQuiz() {
