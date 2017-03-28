@@ -71,6 +71,11 @@ button {
   margin-left: 15px;
 }
 
+.popup-inner img {
+  display: block;
+  margin: 0 auto 0 auto;
+}
+
 /* Outer */
 .popup {
     width:100%;

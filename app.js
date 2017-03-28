@@ -144,13 +144,16 @@ function checkAnswer(userChoice) {
 }
 
 function renderQuestionFeedback(boolean) {
-  var feedback = $('.popup-inner h2');
+  var feedback = $('.popup-inner');
   if (boolean == true){
-    feedback.text('Correct!');
+    feedback.find('h2').text('Correct!');
+    feedback.find('img').attr('src', 'http://i.imgur.com/X6XATbk.gif');
   } else if (boolean == false){
-    feedback.text('Sorry, that wasn\'t correct.');
+    feedback.find('h2').text('Sorry, that wasn\'t correct.');
+    feedback.find('img').attr('src', 'https://media.giphy.com/media/PEtL0mS2JXMBi/giphy.gif');
   } else if (boolean == 'unanswered'){
-    feedback.text('Please choose an answer.');
+    feedback.find('h2').text('MAKE A DECISION');
+    feedback.find('img').attr('src', 'https://media.giphy.com/media/VvN5pKhTsd6Ok/giphy.gif');
   }
 }
 
