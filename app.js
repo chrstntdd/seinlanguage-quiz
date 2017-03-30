@@ -29,7 +29,7 @@ var state = {
       correctAnswer: 'Kenny Rogers Roasters'
     },
     {
-      question: 'Why did George give up his Gore-Tex jacket to the liqor store clerk?',
+      question: 'Why did George give up his Gore-Tex jacket to the liqour store clerk?',
       answers: ['George was hypnotized by the clerk',
                 'George destroyed some merchandise and had no cash to reimburse the store', 
                 'George felt bad for the clerk since there was no heat in the building',
