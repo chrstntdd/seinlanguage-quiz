@@ -147,13 +147,13 @@ function renderQuestionFeedback(boolean) {
   var feedback = $('.popup-inner');
   if (boolean == true){
     feedback.find('h2').text('Correct!');
-    feedback.find('img').attr('src', 'http://i.imgur.com/X6XATbk.gif');
+    feedback.find('img').attr('src', './assets/X6XATbk.gif');
   } else if (boolean == false){
     feedback.find('h2').text('Sorry, that wasn\'t correct.');
-    feedback.find('img').attr('src', 'https://media.giphy.com/media/PEtL0mS2JXMBi/giphy.gif');
+    feedback.find('img').attr('src', './assets/PEtL0mS2JXMBi.gif');
   } else if (boolean == 'unanswered'){
     feedback.find('h2').text('MAKE A DECISION');
-    feedback.find('img').attr('src', 'https://media.giphy.com/media/VvN5pKhTsd6Ok/giphy.gif');
+    feedback.find('img').attr('src', './assets/VvN5pKhTsd6Ok.gif');
   }
 }
 
